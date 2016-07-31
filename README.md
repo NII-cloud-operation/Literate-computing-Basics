@@ -1,12 +1,15 @@
 
 # About: Literate Computing for Reproducible Infrastructure README
 
-Literate Computing for Reproducible Infrastructure: インフラ運用をJupyter + Ansibleでおこなう際のお手本Notebookです。
+---
 
+**Literate Computing for Reproducible Infrastructure:** Notebooks for operations of infrastructure.  Operational procedures and considerations are described literatelly and reproducibly using Jupyter and Ansible. 
+These are a kind of exemplary copybooks which present how NII cloud operation does, thus you may need appropriate modification on your practice.
+
+インフラ運用をJupyter + Ansibleでおこなう際のお手本Notebookです。<br>
 **なお、これらのNotebookはNIIクラウドチーム内で行っている作業の考え方を示すためのもので、環境によってはそのままでは動作しないものもあります。**
 
 [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
-
 
 ## 関連資料
 
@@ -34,7 +37,7 @@ import re
 import os
 from IPython.core.display import HTML
 
-ref_notebooks = filter(lambda m: m, map(lambda n: re.match(r'([A-Z][0-9]{2}_.*)\.ipynb', n), os.listdir('.')))
+ref_notebooks = filter(lambda m: m, map(lambda n: re.match(r'([A-Z][0-9][0-9a-z]+_.*)\.ipynb', n), os.listdir('.')))
 ref_notebooks = sorted(ref_notebooks, key=lambda m: m.group(1))
 HTML(''.join(map(lambda m: '<div><a href="{name}" target="_blank">{title}</a></div>'.format(name=m.group(0), title=m.group(1)),
                  ref_notebooks)))
@@ -43,7 +46,7 @@ HTML(''.join(map(lambda m: '<div><a href="{name}" target="_blank">{title}</a></d
 
 
 
-<div><a href="D00_Notebook環境Prerequisite.ipynb" target="_blank">D00_Notebook環境Prerequisite</a></div><div><a href="D01_Baremetalマシン確保(OpenStack-AIC).ipynb" target="_blank">D01_Baremetalマシン確保(OpenStack-AIC)</a></div><div><a href="D01_マシン確保(Google Compute Engine).ipynb" target="_blank">D01_マシン確保(Google Compute Engine)</a></div><div><a href="D02_Baremetalマシンセキュリティ設定(@NII).ipynb" target="_blank">D02_Baremetalマシンセキュリティ設定(@NII)</a></div><div><a href="D03_Baremetalマシン削除(OpenStack-AIC).ipynb" target="_blank">D03_Baremetalマシン削除(OpenStack-AIC)</a></div><div><a href="D03_マシン削除(Google Compute Engine).ipynb" target="_blank">D03_マシン削除(Google Compute Engine)</a></div><div><a href="D04_KVMのインストール.ipynb" target="_blank">D04_KVMのインストール</a></div><div><a href="D05_Dockerのインストール.ipynb" target="_blank">D05_Dockerのインストール</a></div><div><a href="O01_CentOS6 VMイメージ作成.ipynb" target="_blank">O01_CentOS6 VMイメージ作成</a></div><div><a href="O01_Ubuntu14.04 VMイメージ作成.ipynb" target="_blank">O01_Ubuntu14.04 VMイメージ作成</a></div><div><a href="O02_VMの作成.ipynb" target="_blank">O02_VMの作成</a></div><div><a href="O03_VMの停止.ipynb" target="_blank">O03_VMの停止</a></div><div><a href="T04_KVMのインストール-Report.ipynb" target="_blank">T04_KVMのインストール-Report</a></div><div><a href="T05_VMの一覧・到達性-Report.ipynb" target="_blank">T05_VMの一覧・到達性-Report</a></div>
+<div><a href="D00_Prerequisits for Literate Computing via Notebooks.ipynb" target="_blank">D00_Prerequisits for Literate Computing via Notebooks</a></div><div><a href="D01_GCE - Set! Go! (Google Compute Engine).ipynb" target="_blank">D01_GCE - Set! Go! (Google Compute Engine)</a></div><div><a href="D02_Docker - Ready! on Ubuntu and Set! Go!.ipynb" target="_blank">D02_Docker - Ready! on Ubuntu and Set! Go!</a></div><div><a href="D03_KVM - Ready! on CentOS.ipynb" target="_blank">D03_KVM - Ready! on CentOS</a></div><div><a href="D03b_KVM - Set! CentOS6.ipynb" target="_blank">D03b_KVM - Set! CentOS6</a></div><div><a href="D03c_KVM - Go! VM.ipynb" target="_blank">D03c_KVM - Go! VM</a></div><div><a href="D90_Postscript - Operational Policy Settings; Security etc. (to be elaborated).ipynb" target="_blank">D90_Postscript - Operational Policy Settings; Security etc. (to be elaborated)</a></div><div><a href="O03_GCE - Destroy VM (Google Compute Engine).ipynb" target="_blank">O03_GCE - Destroy VM (Google Compute Engine)</a></div><div><a href="O03_KVM - Destroy VM on KVM.ipynb" target="_blank">O03_KVM - Destroy VM on KVM</a></div><div><a href="T03_KVM - Confirm KVM is healthy .ipynb" target="_blank">T03_KVM - Confirm KVM is healthy </a></div><div><a href="T03_KVM - Status Report of running VMs.ipynb" target="_blank">T03_KVM - Status Report of running VMs</a></div>
 
 
 
@@ -102,7 +105,7 @@ HTML('''
                        }}});
     }
 </script>
-<select id="selector"><option value="D00_Notebook環境Prerequisite.ipynb">D00_Notebook環境Prerequisite</option><option value="D01_Baremetalマシン確保(OpenStack-AIC).ipynb">D01_Baremetalマシン確保(OpenStack-AIC)</option><option value="D01_マシン確保(Google Compute Engine).ipynb">D01_マシン確保(Google Compute Engine)</option><option value="D02_Baremetalマシンセキュリティ設定(@NII).ipynb">D02_Baremetalマシンセキュリティ設定(@NII)</option><option value="D03_Baremetalマシン削除(OpenStack-AIC).ipynb">D03_Baremetalマシン削除(OpenStack-AIC)</option><option value="D03_マシン削除(Google Compute Engine).ipynb">D03_マシン削除(Google Compute Engine)</option><option value="D04_KVMのインストール.ipynb">D04_KVMのインストール</option><option value="D05_Dockerのインストール.ipynb">D05_Dockerのインストール</option><option value="O01_CentOS6 VMイメージ作成.ipynb">O01_CentOS6 VMイメージ作成</option><option value="O01_Ubuntu14.04 VMイメージ作成.ipynb">O01_Ubuntu14.04 VMイメージ作成</option><option value="O02_VMの作成.ipynb">O02_VMの作成</option><option value="O03_VMの停止.ipynb">O03_VMの停止</option><option value="T04_KVMのインストール-Report.ipynb">T04_KVMのインストール-Report</option><option value="T05_VMの一覧・到達性-Report.ipynb">T05_VMの一覧・到達性-Report</option></select><button onclick="copy_otehon()">作業開始</button>
+<select id="selector"><option value="D00_Prerequisits for Literate Computing via Notebooks.ipynb">D00_Prerequisits for Literate Computing via Notebooks</option><option value="D01_GCE - Set! Go! (Google Compute Engine).ipynb">D01_GCE - Set! Go! (Google Compute Engine)</option><option value="D02_Docker - Ready! on Ubuntu and Set! Go!.ipynb">D02_Docker - Ready! on Ubuntu and Set! Go!</option><option value="D03_KVM - Ready! on CentOS.ipynb">D03_KVM - Ready! on CentOS</option><option value="D03b_KVM - Set! CentOS6.ipynb">D03b_KVM - Set! CentOS6</option><option value="D03c_KVM - Go! VM.ipynb">D03c_KVM - Go! VM</option><option value="D90_Postscript - Operational Policy Settings; Security etc. (to be elaborated).ipynb">D90_Postscript - Operational Policy Settings; Security etc. (to be elaborated)</option><option value="O03_GCE - Destroy VM (Google Compute Engine).ipynb">O03_GCE - Destroy VM (Google Compute Engine)</option><option value="O03_KVM - Destroy VM on KVM.ipynb">O03_KVM - Destroy VM on KVM</option><option value="T03_KVM - Confirm KVM is healthy .ipynb">T03_KVM - Confirm KVM is healthy </option><option value="T03_KVM - Status Report of running VMs.ipynb">T03_KVM - Status Report of running VMs</option></select><button onclick="copy_otehon()">作業開始</button>
 
 
 
@@ -112,26 +115,23 @@ HTML('''
 
 
 ```python
-ref_notebooks = filter(lambda m: m, map(lambda n: re.match(r'([A-Z][0-9]{2}_.*)\.ipynb', n), os.listdir('.')))
+ref_notebooks = filter(lambda m: m, map(lambda n: re.match(r'([A-Z][0-9][0-9a-z]+_.*)\.ipynb', n), os.listdir('.')))
 ref_notebooks = sorted(ref_notebooks, key=lambda m: m.group(1))
 !zip ref_notebooks-{datetime.now().strftime('%Y%m%d')}.zip README.ipynb {' '.join(map(lambda n: '"' + n.group(0) + '"', ref_notebooks))} scripts/*
 ```
 
-      adding: README.ipynb (deflated 74%)
-      adding: D00_Notebook環境Prerequisite.ipynb (deflated 80%)
-      adding: D01_Baremetalマシン確保(OpenStack-AIC).ipynb (deflated 78%)
-      adding: D01_マシン確保(Google Compute Engine).ipynb (deflated 79%)
-      adding: D02_Baremetalマシンセキュリティ設定(@NII).ipynb (deflated 79%)
-      adding: D03_Baremetalマシン削除(OpenStack-AIC).ipynb (deflated 75%)
-      adding: D03_マシン削除(Google Compute Engine).ipynb (deflated 74%)
-      adding: D04_KVMのインストール.ipynb (deflated 88%)
-      adding: D05_Dockerのインストール.ipynb (deflated 87%)
-      adding: O01_CentOS6 VMイメージ作成.ipynb (deflated 82%)
-      adding: O01_Ubuntu14.04 VMイメージ作成.ipynb (deflated 81%)
-      adding: O02_VMの作成.ipynb (deflated 78%)
-      adding: O03_VMの停止.ipynb (deflated 80%)
-      adding: T04_KVMのインストール-Report.ipynb (deflated 73%)
-      adding: T05_VMの一覧・到達性-Report.ipynb (deflated 71%)
+      adding: README.ipynb (deflated 73%)
+      adding: D00_Prerequisits for Literate Computing via Notebooks.ipynb (deflated 79%)
+      adding: D01_GCE - Set! Go! (Google Compute Engine).ipynb (deflated 78%)
+      adding: D02_Docker - Ready! on Ubuntu and Set! Go!.ipynb (deflated 87%)
+      adding: D03_KVM - Ready! on CentOS.ipynb (deflated 88%)
+      adding: D03b_KVM - Set! CentOS6.ipynb (deflated 82%)
+      adding: D03c_KVM - Go! VM.ipynb (deflated 77%)
+      adding: D90_Postscript - Operational Policy Settings; Security etc. (to be elaborated).ipynb (deflated 78%)
+      adding: O03_GCE - Destroy VM (Google Compute Engine).ipynb (deflated 74%)
+      adding: O03_KVM - Destroy VM on KVM.ipynb (deflated 79%)
+      adding: T03_KVM - Confirm KVM is healthy .ipynb (deflated 73%)
+      adding: T03_KVM - Status Report of running VMs.ipynb (deflated 71%)
       adding: scripts/euca2ools.py (deflated 47%)
       adding: scripts/nova.py (deflated 67%)
 
@@ -147,7 +147,7 @@ HTML('<a href="../files/{filename}" target="_blank">{filename}</a>' \
 
 
 
-<a href="../files/ref_notebooks-20160623.zip" target="_blank">ref_notebooks-20160623.zip</a>
+<a href="../files/ref_notebooks-20160801.zip" target="_blank">ref_notebooks-20160801.zip</a>
 
 
 
