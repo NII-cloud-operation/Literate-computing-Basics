@@ -9,7 +9,17 @@ These are a kind of exemplary copybooks which present how NII cloud operation do
 インフラ運用をJupyter + Ansibleでおこなう際のお手本Notebookです。<br>
 **なお、これらのNotebookはNIIクラウドチーム内で行っている作業の考え方を示すためのもので、環境によってはそのままでは動作しないものもあります。**
 
+----
+
 [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+
+Literate-computing-Basics (c) by National Institute of Informatics
+
+Literate-computing-Basics is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
 
 ## 関連資料
 
